@@ -10,8 +10,10 @@ const COMMON_DEPARTMENTS = [
   'Civil Engineering',
 ];
 
+const DEFAULT_INITIAL_VALUES = Object.freeze({ name: '', email: '', department: '' });
+
 export default function StudentForm({
-  initialValues = { name: '', email: '', department: '' },
+  initialValues = DEFAULT_INITIAL_VALUES,
   onSubmit,
   onCancel,
   isSubmitting = false,
@@ -28,14 +30,14 @@ export default function StudentForm({
   const [touched, setTouched] = useState({});
 
   useEffect(() => {
-    if (initialValues) {
+    if (initialValues && (initialValues.name || initialValues.email || initialValues.department)) {
       setFormData({
         name: initialValues.name || '',
         email: initialValues.email || '',
         department: initialValues.department || '',
       });
     }
-  }, [initialValues]);
+  }, [initialValues.name, initialValues.email, initialValues.department]);
 
   useEffect(() => {
     if (serverValidationErrors) {

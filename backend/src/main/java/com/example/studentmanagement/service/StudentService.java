@@ -24,9 +24,14 @@ public class StudentService {
     }
 
     public StudentResponse createStudent(StudentRequest request) {
+        String cleanEmail = request.getEmail().trim().toLowerCase();
+        if (studentRepository.existsByEmailIgnoreCase(cleanEmail)) {
+            throw new IllegalArgumentException("A student with email '" + cleanEmail + "' is already registered");
+        }
+
         Student student = new Student();
         student.setName(request.getName().trim());
-        student.setEmail(request.getEmail().trim().toLowerCase());
+        student.setEmail(cleanEmail);
         student.setDepartment(request.getDepartment().trim());
 
         Student saved = studentRepository.save(student);
@@ -52,8 +57,15 @@ public class StudentService {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Student", "id", id));
 
+        String cleanEmail = request.getEmail().trim().toLowerCase();
+        studentRepository.findByEmailIgnoreCase(cleanEmail).ifPresent(existing -> {
+            if (!existing.getId().equals(id)) {
+                throw new IllegalArgumentException("A student with email '" + cleanEmail + "' is already registered to another record");
+            }
+        });
+
         student.setName(request.getName().trim());
-        student.setEmail(request.getEmail().trim().toLowerCase());
+        student.setEmail(cleanEmail);
         student.setDepartment(request.getDepartment().trim());
 
         Student updated = studentRepository.save(student);

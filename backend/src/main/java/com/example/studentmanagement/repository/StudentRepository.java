@@ -12,6 +12,10 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findByDepartmentIgnoreCase(String department);
 
+    boolean existsByEmailIgnoreCase(String email);
+
+    java.util.Optional<Student> findByEmailIgnoreCase(String email);
+
     @Query("SELECT s.department, COUNT(s) FROM Student s GROUP BY s.department ORDER BY s.department ASC")
     List<Object[]> countStudentsGroupedByDepartment();
 
