@@ -1,0 +1,52 @@
+:root {
+  /* Campus Ledger Color Palette */
+  --color-bg: #F7F6F0;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FAF9F5;
+  --color-text-main: #242923;
+  --color-text-muted: #5A6B5E;
+  --color-text-light: #839286;
+  
+  --color-brand: #355C46;
+  --color-brand-hover: #294836;
+  --color-brand-light: #EBF1EC;
+  --color-brand-subtle: #F1F5F2;
+
+  --color-sage: #DCE5DA;
+  --color-sage-dark: #6C8271;
+  
+  --color-terracotta: #B66B50;
+  --color-terracotta-hover: #9E563E;
+  --color-terracotta-light: #F9EFEA;
+  
+  --color-border: #E4E3DB;
+  --color-border-dark: #C9C8BD;
+
+  --color-success-bg: #E8F3EB;
+  --color-success-text: #235B35;
+  --color-error-bg: #FDF0ED;
+  --color-error-text: #A73824;
+  --color-warning-bg: #FFF8E6;
+  --color-warning-text: #8A6400;
+
+  /* Typography */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, Menlo, monospace;
+
+  /* Shadows - subtle & physical */
+  --shadow-subtle: 0 1px 3px rgba(36, 41, 35, 0.05);
+  --shadow-card: 0 2px 6px rgba(36, 41, 35, 0.04), 0 1px 2px rgba(36, 41, 35, 0.03);
+  --shadow-dropdown: 0 8px 24px rgba(36, 41, 35, 0.08), 0 2px 6px rgba(36, 41, 35, 0.04);
+  --shadow-modal: 0 20px 40px rgba(36, 41, 35, 0.12), 0 4px 12px rgba(36, 41, 35, 0.06);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 220ms ease;
+}

@@ -1,0 +1,15 @@
+# Root .gitignore
+node_modules/
+target/
+.m2/
+data/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.class
+*.jar
+*.war
+dist/
+.env
